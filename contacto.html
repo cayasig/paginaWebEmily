@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Apoyo Emocional Adolescente</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --color-principal: #8B6F47;
+            --color-secundario: #A0826D;
+            --color-claro: #D4C4B0;
+            --color-pastel: #E8DED0;
+            --color-fondo: #F5F1EB;
+            --color-texto: #4A3C28;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+        }
+
+        .navbar {
+            background-color: var(--color-principal);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--color-pastel) !important;
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            color: var(--color-pastel) !important;
+            border-bottom: 2px solid var(--color-pastel);
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--color-secundario) 0%, var(--color-principal) 100%);
+            color: white;
+            padding: 60px 0;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .contact-section {
+            padding: 50px 0;
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--color-claro), var(--color-pastel));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .contact-icon i {
+            font-size: 2.5rem;
+            color: var(--color-principal);
+        }
+
+        .contact-card h4 {
+            color: var(--color-principal);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .contact-card p {
+            text-align: center;
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-control, .form-select {
+            border: 2px solid var(--color-claro);
+            border-radius: 10px;
+            padding: 12px 15px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--color-secundario);
+            box-shadow: 0 0 0 0.25rem rgba(139, 111, 71, 0.25);
+        }
+
+        .form-label {
+            color: var(--color-principal);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .btn-custom {
+            background-color: var(--color-principal);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-custom:hover {
+            background-color: var(--color-secundario);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .alert-custom {
+            background-color: var(--color-pastel);
+            border-left: 4px solid var(--color-secundario);
+            color: var(--color-texto);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .emergency-box {
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .emergency-box h4 {
+            color: white;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .emergency-box p {
+            margin-bottom: 0.5rem;
+        }
+
+        .emergency-box strong {
+            font-size: 1.3rem;
+        }
+
+        .info-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--color-secundario);
+        }
+
+        .info-box h4 {
+            color: var(--color-principal);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .section-title {
+            color: var(--color-principal);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--color-secundario);
+        }
+
+        footer {
+            background-color: var(--color-principal);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+
+        footer h5 {
+            color: var(--color-pastel);
+            margin-bottom: 1rem;
+        }
+
+        footer p, footer ul {
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-divider {
+            height: 1px;
+            background-color: rgba(255,255,255,0.2);
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .contact-card {
+                padding: 1.5rem;
+            }
+
+            .contact-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .contact-icon i {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-heart"></i> Apoyo Emocional
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="informacion.html">Información</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="desarrolladores.html">Desarrolladores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-envelope"></i> Contacto y Ayuda</h1>
+            <p class="lead">Encuentra los recursos de apoyo disponibles para ti</p>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <div class="container">
+        <!-- Alerta de Emergencia -->
+        <section class="contact-section">
+            <div class="emergency-box">
+                <h4><i class="fas fa-exclamation-circle"></i> ¿Necesitas Ayuda Urgente?</h4>
+                <p>Si estás en crisis o tienes pensamientos de hacerte daño, busca ayuda inmediatamente:</p>
+                <p><strong><i class="fas fa-phone-alt"></i> Línea de Emergencias: 911</strong></p>
+                <p><strong><i class="fas fa-headset"></i> Salud Mental ECU 911: 171</strong></p>
+                <p>Habla con un adulto de confianza, padre, profesor o consejero ahora mismo.</p>
+            </div>
+        </section>
+
+        <!-- Información General -->
+        <section class="contact-section">
+            <div class="alert-custom">
+                <h4><i class="fas fa-info-circle"></i> Importante</h4>
+                <p>Este sitio web es una herramienta informativa y educativa. No reemplaza la atención profesional. Si necesitas ayuda especializada, te recomendamos que te acerques al Departamento de Consejería Estudiantil de nuestro colegio.</p>
+            </div>
+        </section>
+
+        <!-- Recursos del Colegio -->
+        <section class="contact-section">
+            <h2 class="section-title">Recursos de Apoyo en el Colegio</h2>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h4>Personas de confianza</h4>
+                        <p>Puedes acudir a un respaldo o consejo a tus amigos de confianza para que asi obtengas un respiro.</p>
+                        <p><strong>Beneficios:</strong></p>
+                        <ul class="text-start">
+                            <li>Durante el horario de clase</li>
+                            <li>Durante el recreo</li>
+                            <li>Citarlo en algun lugar privado para sentirse mas comodo.</li>
+                        </ul>
+                        <p class="mt-3"><em>No dudes en acercarte, tus amigos estan para apoyarte.</em></p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h4>Tutor de Clase</h4>
+                        <p>Tu tutor/a es tu primer contacto para cualquier situación que necesites compartir.</p>
+                        <p><strong>Disponibilidad:</strong></p>
+                        <ul class="text-start">
+                            <li>Durante el horario de clase</li>
+                            <li>En horas de tutoría</li>
+                            <li>Por cita previa</li>
+                        </ul>
+                        <p class="mt-3"><em>No dudes en acercarte, estamos aquí para apoyarte.</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formulario de Contacto -->
+        <section class="contact-section">
+            <h2 class="section-title">Envíanos un Mensaje</h2>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="info-box">
+                        <p class="text-center">Si tienes dudas, sugerencias o quieres compartir tu experiencia con este sitio web, puedes enviarnos un mensaje.</p>
+                    </div>
+
+                    <form id="contactForm" class="contact-card">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">
+                                <i class="fas fa-user"></i> Nombre Completo
+                            </label>
+                            <input type="text" class="form-control" id="nombre" placeholder="Tu nombre" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">
+                                <i class="fas fa-envelope"></i> Correo Electrónico
+                            </label>
+                            <input type="email" class="form-control" id="email" placeholder="tu.email@ejemplo.com" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="curso" class="form-label">
+                                <i class="fas fa-graduation-cap"></i> Curso
+                            </label>
+                            <select class="form-select" id="curso" required>
+                                <option value="">Selecciona tu curso</option>
+                                <option value="1ro_bgu">1ro Bachillerato</option>
+                                <option value="2do_bgu">2do Bachillerato</option>
+                                <option value="3ro_bgu">3ro Bachillerato</option>
+                                <option value="docente">Docente</option>
+                                <option value="padre">Padre de Familia</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="asunto" class="form-label">
+                                <i class="fas fa-tag"></i> Asunto
+                            </label>
+                            <select class="form-select" id="asunto" required>
+                                <option value="">Selecciona un asunto</option>
+                                <option value="consulta">Consulta general</option>
+                                <option value="sugerencia">Sugerencia</option>
+                                <option value="testimonio">Compartir experiencia</option>
+                                <option value="recurso">Solicitar más recursos</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="mensaje" class="form-label">
+                                <i class="fas fa-comment"></i> Mensaje
+                            </label>
+                            <textarea class="form-control" id="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                        </div>
+
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="privacidad" required>
+                            <label class="form-check-label" for="privacidad">
+                                Acepto que mis datos sean utilizados únicamente para responder mi mensaje
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-custom">
+                            <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Líneas de Ayuda -->
+        <section class="contact-section">
+            <h2 class="section-title">Líneas de Ayuda Nacionales</h2>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="info-box">
+                        <h4><i class="fas fa-phone-volume"></i> Línea de Ayuda Psicológica</h4>
+                        <p><strong>Teléfono:</strong> 171 (Opción 6)</p>
+                        <p><strong>Horario:</strong> 24 horas, 7 días a la semana</p>
+                        <p><strong>Servicio:</strong> Atención psicológica telefónica gratuita</p>
+                        <p><em>Confidencial y anónima</em></p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="info-box">
+                        <h4><i class="fas fa-shield-alt"></i> Línea de Protección Infantil</h4>
+                        <p><strong>Teléfono:</strong> 1800-DELITO (335486)</p>
+                        <p><strong>Horario:</strong> 24 horas, 7 días a la semana</p>
+                        <p><strong>Servicio:</strong> Denuncias y protección de derechos</p>
+                        <p><em>Para casos de abuso o maltrato</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recursos Adicionales -->
+        <section class="contact-section">
+            <h2 class="section-title">Recursos Adicionales</h2>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="info-box">
+                        <h4><i class="fas fa-link"></i> Sitios Web Recomendados</h4>
+                        <ul>
+                            <li><strong>Ministerio de Salud Pública del Ecuador:</strong> Información oficial sobre salud mental</li>
+                            <li><strong>Organización Mundial de la Salud (OMS):</strong> Recursos educativos sobre salud mental adolescente</li>
+                            <li><strong>UNICEF Ecuador:</strong> Programas de apoyo para adolescentes</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h4><i class="fas fa-book"></i> Recomendaciones</h4>
+                        <ul>
+                            <li>Habla con alguien en quien confíes sobre lo que sientes</li>
+                            <li>No tengas miedo de pedir ayuda profesional</li>
+                            <li>Recuerda que buscar apoyo es un acto de valentía</li>
+                            <li>Tu salud mental es tan importante como tu salud física</li>
+                            <li>No estás solo/a, hay personas que quieren ayudarte</li>
+                        </ul>
+                    </div>
+
+                    <div class="alert-custom text-center">
+                        <h4><i class="fas "></i> Recuerda</h4>
+                        <p class="lead mb-0">Tu bienestar emocional es importante. No dudes en buscar ayuda cuando la necesites. Todos merecemos sentirnos bien y vivir una vida plena.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto text-center">
+                    <h5>UNIDAD EDUCATIVA FISCAL DOLORES SUCRE</h5>
+                    <p>Previa a la Obtención del Título de Bachiller Técnico en Servicio: "Informática"</p>
+                    
+                    <div class="footer-divider"></div>
+                    
+                    <p><strong>Desarrolladores del Proyecto:</strong></p>
+                    <ul class="list-unstyled">
+                        <li>Emily Cardenas Chang</li>
+                        <li>Adriana Soza Bravo</li>
+                        <li>Leonel Menéndez</li>
+                    </ul>
+                    
+                    <div class="footer-divider"></div>
+                    
+                    <p>Curso: 3ro. Bachillerato Técnico Informática "A"</p>
+                    <p>Guayaquil – Ecuador</p>
+                    <p><strong>2025 - 2026</strong></p>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0"><small>&copy; 2025 Proyecto de Apoyo Emocional Adolescente. Todos los derechos reservados.</small></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Confirmación -->
+    <div class="modal fade" id="confirmModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: var(--color-principal);">
+                    <h5 class="modal-title" style="color: white;">
+                        <i class="fas fa-check-circle"></i> Mensaje Enviado
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" style="filter: brightness(0) invert(1);"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <i class="fas fa-paper-plane" style="font-size: 3rem; color: var(--color-secundario); margin-bottom: 1rem;"></i>
+                    <h4>¡Gracias por contactarnos!</h4>
+                    <p>Hemos recibido tu mensaje y lo revisaremos pronto. Te responderemos a la brevedad posible.</p>
+                    <p><em>Tu opinión es muy importante para nosotros.</em></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-custom" data-bs-dismiss="modal">Entendido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Manejo del formulario
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Aquí normalmente enviarías los datos a un servidor
+            // Por ahora solo mostramos un mensaje de confirmación
+            
+            // Mostrar modal de confirmación
+            const modal = new bootstrap.Modal(document.getElementById('confirmModal'));
+            modal.show();
+            
+            // Limpiar formulario
+            this.reset();
+        });
+
+        // Validación en tiempo real
+        const form = document.getElementById('contactForm');
+        const inputs = form.querySelectorAll('input, textarea, select');
+        
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.value.trim() === '' && this.hasAttribute('required')) {
+                    this.classList.add('is-invalid');
+                } else {
+                    this.classList.remove('is-invalid');
+                    this.classList.add('is-valid');
+                }
+            });
+            
+            input.addEventListener('input', function() {
+                if (this.classList.contains('is-invalid')) {
+                    this.classList.remove('is-invalid');
+                    if (this.value.trim() !== '') {
+                        this.classList.add('is-valid');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

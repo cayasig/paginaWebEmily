@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrolladores - Apoyo Emocional Adolescente</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --color-principal: #8B6F47;
+            --color-secundario: #A0826D;
+            --color-claro: #D4C4B0;
+            --color-pastel: #E8DED0;
+            --color-fondo: #F5F1EB;
+            --color-texto: #4A3C28;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+        }
+
+        .navbar {
+            background-color: var(--color-principal);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--color-pastel) !important;
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            color: var(--color-pastel) !important;
+            border-bottom: 2px solid var(--color-pastel);
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--color-secundario) 0%, var(--color-principal) 100%);
+            color: white;
+            padding: 60px 0;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .team-section {
+            padding: 50px 0;
+        }
+
+        .developer-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+            border-top: 5px solid var(--color-secundario);
+        }
+
+        .developer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .developer-avatar {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, var(--color-claro), var(--color-pastel));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .developer-avatar i {
+            font-size: 4rem;
+            color: var(--color-principal);
+        }
+
+        .developer-card h3 {
+            color: var(--color-principal);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .developer-card .role {
+            color: var(--color-secundario);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .developer-card p {
+            color: var(--color-texto);
+            line-height: 1.8;
+        }
+
+        .section-title {
+            color: var(--color-principal);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--color-secundario);
+        }
+
+        .info-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--color-secundario);
+        }
+
+        .info-box h4 {
+            color: var(--color-principal);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .project-info {
+            background: var(--color-pastel);
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+        }
+
+        .project-info h3 {
+            color: var(--color-principal);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .project-details {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1.5rem;
+        }
+
+        .project-details ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .project-details ul li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--color-pastel);
+        }
+
+        .project-details ul li:last-child {
+            border-bottom: none;
+        }
+
+        .project-details ul li strong {
+            color: var(--color-principal);
+        }
+
+        footer {
+            background-color: var(--color-principal);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+
+        footer h5 {
+            color: var(--color-pastel);
+            margin-bottom: 1rem;
+        }
+
+        footer p, footer ul {
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-divider {
+            height: 1px;
+            background-color: rgba(255,255,255,0.2);
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .developer-card {
+                padding: 1.5rem;
+            }
+
+            .developer-avatar {
+                width: 120px;
+                height: 120px;
+            }
+
+            .developer-avatar i {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-heart"></i> Apoyo Emocional
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="informacion.html">Información</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="desarrolladores.html">Desarrolladores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-users"></i> Nuestro Equipo</h1>
+            <p class="lead">Conoce a los desarrolladores de este proyecto</p>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <div class="container">
+        <section class="team-section">
+            <h2 class="section-title">Desarrolladores del Proyecto</h2>
+            
+            <div class="row">
+                <!-- Desarrollador 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="developer-card">
+                        <div class="developer-avatar">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h3>Emily Cardenas Chang</h3>
+                        <p class="role">Desarrolladora Frontend</p>
+                        <p>Estudiante de 3ro. Bachillerato Técnico en Informática, enfocada en el diseño de interfaces y experiencia de usuario. Apasionada por crear soluciones digitales que impacten positivamente en la comunidad.</p>
+                    </div>
+                </div>
+
+                <!-- Desarrollador 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="developer-card">
+                        <div class="developer-avatar">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h3>Adriana Soza Bravo</h3>
+                        <p class="role">Desarrolladora de Contenido</p>
+                        <p>Estudiante de 3ro. Bachillerato Técnico en Informática, especializada en investigación y desarrollo de contenido educativo. Comprometida con la promoción de la salud mental en adolescentes.</p>
+                    </div>
+                </div>
+
+                <!-- Desarrollador 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="developer-card">
+                        <div class="developer-avatar">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h3>Leonel Menéndez</h3>
+                        <p class="role">Desarrollador Backend</p>
+                        <p>Estudiante de 3ro. Bachillerato Técnico en Informática, enfocado en la estructura técnica y funcionalidad del sitio. Interesado en el desarrollo de proyectos con impacto social.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Información del Proyecto -->
+        <section class="project-info">
+            <h3><i class="fas fa-project-diagram"></i> Información del Proyecto</h3>
+            <div class="project-details">
+                <ul>
+                    <li><strong>Institución:</strong> Unidad Educativa Fiscal Dolores Sucre</li>
+                    <li><strong>Proyecto:</strong> Sitio Web de Apoyo y Orientación sobre Trastornos Emocionales en Adolescentes</li>
+                    <li><strong>Especialidad:</strong> Bachillerato Técnico en Servicio - Informática</li>
+                    <li><strong>Curso:</strong> 3ro. Bachillerato Técnico Informática "A"</li>
+                    <li><strong>Año Lectivo:</strong> 2025 - 2026</li>
+                    <li><strong>Ubicación:</strong> Guayaquil, Ecuador</li>
+                    <li><strong>Objetivo:</strong> Previa a la Obtención del Título de Bachiller Técnico</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Motivación del Proyecto -->
+        <section class="team-section">
+            <h2 class="section-title">¿Por Qué Creamos Este Proyecto?</h2>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="info-box">
+                        <h4><i class="fas fa-lightbulb"></i> Nuestra Motivación</h4>
+                        <p>Como estudiantes del Colegio Dolores Sucre, hemos sido testigos de cómo muchos de nuestros compañeros enfrentan desafíos emocionales sin saber dónde buscar información o ayuda confiable.</p>
+                        <p>Identificamos la necesidad de crear un espacio digital seguro, accesible y especialmente diseñado para adolescentes como nosotros, donde se pueda encontrar información clara sobre salud mental sin juicios ni estigmas.</p>
+                        <p>Este proyecto representa nuestro compromiso con el bienestar de la comunidad estudiantil y nuestra contribución para normalizar las conversaciones sobre salud emocional entre los jóvenes.</p>
+                    </div>
+
+                    <div class="info-box">
+                        <h4><i class="fas fa-bullseye"></i> Nuestros Objetivos</h4>
+                        <ul>
+                            <li>Crear un recurso educativo accesible para todos los estudiantes</li>
+                            <li>Reducir el estigma asociado a la búsqueda de ayuda psicológica</li>
+                            <li>Proporcionar información basada en fuentes confiables</li>
+                            <li>Facilitar el acceso a los servicios de orientación del colegio</li>
+                            <li>Promover una cultura de autocuidado emocional</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box">
+                        <h4><i class="fas fa-tools"></i> Proceso de Desarrollo</h4>
+                        <p><strong>1. Investigación:</strong> Recopilamos información sobre los principales trastornos emocionales que afectan a adolescentes de 15 a 17 años.</p>
+                        <p><strong>2. Planificación:</strong> Diseñamos la estructura del sitio web pensando en la experiencia del usuario adolescente.</p>
+                        <p><strong>3. Desarrollo:</strong> Utilizamos HTML, Bootstrap y JavaScript para crear un sitio web funcional y responsivo.</p>
+                        <p><strong>4. Diseño:</strong> Seleccionamos una paleta de colores cálidos (café/chocolate) para transmitir calma y confianza.</p>
+                        <p><strong>5. Contenido:</strong> Adaptamos la información a un lenguaje claro y cercano para nuestros compañeros estudiantes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Agradecimientos -->
+        <section class="team-section">
+            <h2 class="section-title">Agradecimientos</h2>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="info-box text-center">
+                        <!-- <h4><i class="fas"></i> Queremos Agradecer</h4> -->
+                        <p>A nuestros profesores de la especialidad de Informática por guiarnos en el desarrollo técnico de este proyecto.</p>
+                        <p>Al Departamento de Consejería Estudiantil del Colegio Dolores Sucre por su apoyo y orientación en los contenidos de salud emocional.</p>
+                        <p>A nuestras familias por su apoyo incondicional durante todo el proceso.</p>
+                        <p>Y especialmente a todos los estudiantes que utilizarán este recurso para cuidar su salud mental.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mensaje Final -->
+        <section class="team-section">
+            <div class="project-info">
+                <h3><i class="fas fa-quote-left"></i> Nuestro Mensaje</h3>
+                <p class="lead text-center" style="color: var(--color-texto); line-height: 2;">
+                    "Creemos firmemente que la salud mental es tan importante como la salud física. 
+                    Este proyecto es nuestro granito de arena para crear un entorno escolar más comprensivo, 
+                    donde cada estudiante se sienta apoyado y sepa que no está solo en sus desafíos emocionales. 
+                    Si este sitio ayuda a una sola persona a entender mejor sus emociones o a buscar ayuda, 
+                    habremos cumplido nuestro objetivo."
+                </p>
+                <p class="text-center mt-4" style="color: var(--color-texto);">
+                    <strong>- Equipo de Desarrollo</strong><br>
+                    3ro. Bachillerato Técnico Informática "A"
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto text-center">
+                    <h5>UNIDAD EDUCATIVA FISCAL DOLORES SUCRE</h5>
+                    <p>Previa a la Obtención del Título de Bachiller Técnico en Servicio: "Informática"</p>
+                    
+                    <div class="footer-divider"></div>
+                    
+                    <p><strong>Desarrolladores del Proyecto:</strong></p>
+                    <ul class="list-unstyled">
+                        <li>Emily Cardenas Chang</li>
+                        <li>Adriana Soza Bravo</li>
+                        <li>Leonel Menéndez</li>
+                    </ul>
+                    
+                    <div class="footer-divider"></div>
+                    
+                    <p>Curso: 3ro. Bachillerato Técnico Informática "A"</p>
+                    <p>Guayaquil – Ecuador</p>
+                    <p><strong>2025 - 2026</strong></p>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0"><small>&copy; 2025 Proyecto de Apoyo Emocional Adolescente. Todos los derechos reservados.</small></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

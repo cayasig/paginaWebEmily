@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información - Apoyo Emocional Adolescente</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --color-principal: #8B6F47;
+            --color-secundario: #A0826D;
+            --color-claro: #D4C4B0;
+            --color-pastel: #E8DED0;
+            --color-fondo: #F5F1EB;
+            --color-texto: #4A3C28;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+        }
+
+        .navbar {
+            background-color: var(--color-principal);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--color-pastel) !important;
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            color: var(--color-pastel) !important;
+            border-bottom: 2px solid var(--color-pastel);
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--color-secundario) 0%, var(--color-principal) 100%);
+            color: white;
+            padding: 60px 0;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            color: var(--color-principal);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--color-secundario);
+        }
+
+        .info-section {
+            padding: 50px 0;
+        }
+
+        .info-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--color-secundario);
+        }
+
+        .info-card h4 {
+            color: var(--color-principal);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .info-card ul {
+            line-height: 2;
+        }
+
+        .info-card ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .icon-box {
+            background: var(--color-pastel);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .icon-box i {
+            font-size: 2rem;
+            color: var(--color-principal);
+        }
+
+        .feature-box {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .feature-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .alert-custom {
+            background-color: var(--color-pastel);
+            border-left: 4px solid var(--color-secundario);
+            color: var(--color-texto);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        footer {
+            background-color: var(--color-principal);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+
+        footer h5 {
+            color: var(--color-pastel);
+            margin-bottom: 1rem;
+        }
+
+        footer p, footer ul {
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-divider {
+            height: 1px;
+            background-color: rgba(255,255,255,0.2);
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .info-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-heart"></i> Apoyo Emocional
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="informacion.html">Información</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="desarrolladores.html">Desarrolladores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-info-circle"></i> Información del Proyecto</h1>
+            <p class="lead">Conoce más sobre nuestro sitio web y su propósito</p>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <div class="container">
+        <!-- Propósito del Sitio -->
+        <section class="info-section">
+            <h2 class="section-title"><i class="fas fa-bullseye"></i> Propósito del Sitio Web</h2>
+            <div class="info-card">
+                <p class="lead">Este proyecto tiene como finalidad brindar un espacio digital informativo y orientador que contribuya al bienestar emocional y la salud mental de los adolescentes del Colegio Dolores Sucre.</p>
+                
+                <h4 class="mt-4">Objetivos Principales:</h4>
+                <ul>
+                    <li><strong>Educar:</strong> Proporcionar información clara y confiable sobre los trastornos emocionales más comunes en la adolescencia</li>
+                    <li><strong>Orientar:</strong> Ofrecer herramientas de autoconocimiento y estrategias para el manejo emocional</li>
+                    <li><strong>Prevenir:</strong> Promover la identificación temprana de problemas emocionales</li>
+                    <li><strong>Conectar:</strong> Facilitar el acceso a recursos de apoyo profesional dentro de la institución</li>
+                    <li><strong>Sensibilizar:</strong> Reducir el estigma asociado a la salud mental en la comunidad educativa</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Público Objetivo -->
+        <section class="info-section">
+            <h2 class="section-title"><i class="fas fa-users"></i> ¿A Quién va Dirigido?</h2>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="icon-box">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h4>Estudiantes</h4>
+                        <p>Adolescentes de 15 a 17 años que buscan comprender sus emociones y encontrar apoyo</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="icon-box">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <h4>Padres de Familia</h4>
+                        <p>Como guía de orientación para comprender y apoyar a sus hijos adolescentes</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box">
+                        <div class="icon-box">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h4>Docentes</h4>
+                        <p>Como recurso educativo para identificar señales de alerta en sus estudiantes</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert-custom mt-4">
+                <i class="fas fa-lightbulb"></i> <strong>Nota Importante:</strong> Este sitio web está diseñado principalmente para estudiantes del Colegio Dolores Sucre, pero puede ser utilizado por toda la comunidad educativa como herramienta de prevención y orientación en temas de salud emocional.
+            </div>
+        </section>
+
+        <!-- Contenido del Sitio -->
+        <section class="info-section">
+            <h2 class="section-title"><i class="fas fa-list-ul"></i> Contenido del Sitio</h2>
+            
+            <div class="info-card">
+                <h4><i class="fas fa-home"></i> Página de Inicio</h4>
+                <p>Presenta el objetivo del sitio web, mensajes motivadores y accesos directos a las secciones principales. Incluye información sobre los principales trastornos emocionales con modales interactivos.</p>
+            </div>
+
+            <div class="info-card">
+                <h4><i class="fas fa-brain"></i> Trastornos Emocionales Abordados</h4>
+                <ul>
+                    <li><strong>Ansiedad:</strong> Información sobre síntomas, causas y estrategias de manejo</li>
+                    <li><strong>Depresión:</strong> Señales de alerta, mitos y verdades, recursos de ayuda</li>
+                    <li><strong>Estrés Académico:</strong> Técnicas de organización y manejo del tiempo</li>
+                    <li><strong>Baja Autoestima:</strong> Actividades para fortalecer la confianza personal</li>
+                    <li><strong>Cambios de Humor:</strong> Comprender las emociones y cómo regularlas</li>
+                    <li><strong>Problemas de Conducta:</strong> Identificación y estrategias de mejora</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h4><i class="fas fa-hands-helping"></i> Recursos de Apoyo</h4>
+                <p>Información sobre cómo acceder al Departamento de Consejería Estudiantil y apoyo psicológico del colegio. Promoción de la comunicación abierta y el acompañamiento responsable.</p>
+            </div>
+        </section>
+
+        <!-- Por Qué es Importante -->
+        <section class="info-section">
+            <h2 class="section-title"><i class="fas fa-heartbeat"></i> ¿Por Qué es Importante?</h2>
+            
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="info-card">
+                        <h4>Contexto Actual</h4>
+                        <p>Los adolescentes de hoy enfrentan múltiples desafíos:</p>
+                        <ul>
+                            <li>Presión académica constante</li>
+                            <li>Influencia de redes sociales</li>
+                            <li>Cambios biológicos y hormonales</li>
+                            <li>Búsqueda de identidad y aceptación</li>
+                            <li>Dinámicas familiares complejas</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="info-card">
+                        <h4>Necesidad Identificada</h4>
+                        <p>En el Colegio Dolores Sucre se identificó que:</p>
+                        <ul>
+                            <li>Muchos estudiantes no buscan ayuda por temor o desconocimiento</li>
+                            <li>Existe falta de información confiable y accesible</li>
+                            <li>Se requieren herramientas de autoconocimiento</li>
+                            <li>Es necesario normalizar la búsqueda de apoyo emocional</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Características Técnicas -->
+        <section class="info-section">
+            <h2 class="section-title"><i class="fas fa-code"></i> Características Técnicas</h2>
+            
+            <div class="info-card">
+                <h4>Tecnologías Utilizadas</h4>
+                <div class="row mt-3">
+                    <div class="col-md-4 text-center mb-3">
+                        <i class="fab fa-html5" style="font-size: 3rem; color: #E34F26;"></i>
+                        <h5 class="mt-2">HTML5</h5>
+                        <p>Estructura del contenido</p>
+                    </div>
+                    <div class="col-md-4 text-center mb-3">
+                        <i class="fab fa-bootstrap" style="font-size: 3rem; color: #7952B3;"></i>
+                        <h5 class="mt-2">Bootstrap 5</h5>
+                        <p>Diseño responsivo</p>
+                    </div>
+                    <div class="col-md-4 text-center mb-3">
+                        <i class="fab fa-js-square" style="font-size: 3rem; color: #F7DF1E;"></i>
+                        <h5 class="mt-2">JavaScript</h5>
+                        <p>Interactividad</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h4>Características del Diseño</h4>
+                <ul>
+                    <li><strong>Responsivo:</strong> Adaptable a dispositivos móviles, tabletas y computadoras</li>
+                    <li><strong>Accesible:</strong> Lenguaje claro y navegación intuitiva</li>
+                    <li><strong>Visual:</strong> Paleta de colores cálidos (café/chocolate) que transmiten calma</li>
+                    <li><strong>Interactivo:</strong> Modales informativos y elementos dinámicos</li>
+                    <li><strong>Organizado:</strong> Secciones claramente definidas para facilitar la búsqueda de información</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Compromiso -->
+        <section class="info-section">
+            <div class="info-card text-center">
+                <i class="fas fa-shield-alt" style="font-size: 3rem; color: var(--color-secundario); margin-bottom: 1rem;"></i>
+                <h4>Nuestro Compromiso</h4>
+                <p class="lead">Este sitio web representa una contribución significativa al entorno educativo del Colegio Dolores Sucre, fortaleciendo la atención integral a los adolescentes y promoviendo una cultura de salud mental accesible.</p>
+                <p>La información presentada está fundamentada en bases psicopedagógicas y adaptada al lenguaje y contexto de los adolescentes, siempre promoviendo la búsqueda de ayuda profesional cuando sea necesario.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto text-center">
+                    <h5>UNIDAD EDUCATIVA FISCAL DOLORES SUCRE</h5>
+                    <p>Previa a la Obtención del Título de Bachiller Técnico en Servicio: "Informática"</p>
+                    
+                    <div class="footer-divider"></div>
+                    
+                    <p><strong>Desarrolladores del Proyecto:</strong></p>
+                    <ul class="list-unstyled">
+                        <li>Emily Cardenas Chang</li>
+                        <li>Adriana Soza Bravo</li>
+                        <li>Leonel Menéndez</li>
+                    </ul>
+                    
+                    <div class="footer-divider"></div>
+                    
+                    <p>Curso: 3ro. Bachillerato Técnico Informática "A"</p>
+                    <p>Guayaquil – Ecuador</p>
+                    <p><strong>2025 - 2026</strong></p>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0"><small>&copy; 2025 Proyecto de Apoyo Emocional Adolescente. Todos los derechos reservados.</small></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
